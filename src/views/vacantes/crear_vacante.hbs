@@ -1,0 +1,61 @@
+
+
+                
+                    <div class="card-body">
+                       <div class=" d-flex align-items-center no-padding">
+                           <div class="col">
+                               <div class="row justify-content-center">
+                                   <div class="col-lg-6">
+                                       <div class="card bg-dark text-white">
+                                           <div class="card-body">
+                                                <form action="/vacantes/crear_vacante" method="POST">
+                                                    <h1 class="text-white" align="center">DESCRIBE TU OFERTA DE TRABAJO</h1><br />
+                                                <div class="form-group">
+                                                <label><strong>Título del trabajo</strong></label>
+                                                    <input class="form-control" name="titulo" type="text" placeholder="" /></div>
+                                                       <div class="form-group">
+
+                                                <label><strong>Escribe el tipo de trabajo</strong></label><br></br>
+                                                    <input class="form-control" name="trabajo"  type="text" placeholder="Ejemplo: Ebanistería"></input>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label><strong>Ciudad </strong></label>
+                                                    <select name="ciudad"class="form-control">
+                                                    <option>Ciudad 1</option>
+                                                    <option>Ciudad 2</option>
+                                                    <option>Ciudad 3</option>
+                                                    </select>
+                                                 </div>
+                                                       <div class="form-group">
+                                                <label ><strong>Cantidad de dinero a pagar</strong></label><br></br>
+                                                    <input class="form-control" name="dinero" type="text" placeholder="Ejemplo: 10.000" ></input></div>
+
+                                            <div class="form-group">
+                                                <label><strong>Descríbenos el trabajo</strong></label>
+                                                    <textarea name="descripcion" class="form-control" rows="6" cols="100" placeholder=""></textarea>
+                                            </div>
+                                            <!--<form action="/upload" method="POST" enctype="multipart/form-data">
+                                                <input type="file" name="imagen">
+                                                    <button type="submit">
+                                                    Subir
+                                                    </button>
+                                            </form>-->
+                                            <div class="form-group">
+                                                <label>Sube tu archivo</label>
+                                                <input type="file" class="form-control-file" id="archivo"></input>
+                                                </div>
+                                            <div class="col-lg">
+                                                <button type="submit" class="btn btn-block btn-success btn-lg mt-4">Publicar</button>
+                                                
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            

@@ -1,0 +1,66 @@
+<form action="/usuario/step" method="POST" class="form-register" style="align-items: flex-start;">
+     <div class="card-body">
+           <div class=" d-flex align-items-center no-padding">
+               <div class="col">
+                   <div class="row justify-content-center">
+                       <div class="col-lg-6">
+                           <div class="card bg-tertiary text-white">
+                               <div class="card-body">
+ 
+        
+                      <h4 class="heading h3 text-white pt-3 pb-5">INICIA SESION CON TU CUENTA</h4>
+
+                       <div class="form-group">
+                          <label><strong>Numero de cedula</strong></label>
+                          <input name="numeroCedula" type="text" class="form-control" placeholder="Numero de cedula"/>
+                         </div>
+
+                        <div class="form-group">
+                          <label><strong>Contraseña de ingreso</strong></label>
+                          <input name="contraseña" type="password" class="form-control" placeholder="Contraseña"/>
+                        </div>
+
+                        <div>
+                            <button type="submit" class="btn btn-block btn-success btn-lg mt-4">ENTRAR</button>  
+                        </div>  
+                        <div class="text-right mt-4"><a href="#" class="text-white">OLVIDE MI CLAVE</a></div>
+  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+</form>
+
+
+<script> 
+let form = document.querySelector('.form-register');
+let progressOptions = document.querySelectorAll('.progressbar__option');
+
+form.addEventListener('click', function(e) {
+    let element = e.target;
+    let isButtonNext = element.classList.contains('step__button--next');
+    let isButtonBack = element.classList.contains('step__button--back');
+    if (isButtonNext || isButtonBack) {
+        let currentStep = document.getElementById('step-' + element.dataset.step);
+        let jumpStep = document.getElementById('step-' + element.dataset.to_step);
+        currentStep.addEventListener('animationend', function callback() {
+            currentStep.classList.remove('active');
+            jumpStep.classList.add('active');
+            if (isButtonNext) {
+                currentStep.classList.add('to-left');
+                progressOptions[element.dataset.to_step - 1].classList.add('active');
+            } else {
+                jumpStep.classList.remove('to-left');
+                progressOptions[element.dataset.step - 1].classList.remove('active');
+            }
+            currentStep.removeEventListener('animationend', callback);
+        });
+        currentStep.classList.add('inactive');
+        jumpStep.classList.remove('inactive');
+    }
+});
+</script>
